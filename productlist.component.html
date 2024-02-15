@@ -1,0 +1,29 @@
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Image</th>
+            <th>quantity</th>
+            <th>Price</th>
+        </tr>
+    </thead>
+    <tbody>
+        <ng-container *ngFor="let prd of prdlist">
+            <tr>
+            <td>{{prd.id}}</td>
+            <td>{{prd.name}}</td>
+            <td><img [src]="prd.imgUrl"></td>
+            <td>{{prd.quantity}}</td>
+            <td>{{prd.price}}</td>
+       
+      <td> <input #itemsCount type="number" class="form-control" ></td> 
+        <td> <button type="button" class="btn btn-secondary" (click)="buy(prd.id, itemsCount.value)">Buy</button></td>
+    </tr>
+</ng-container>
+    </tbody>
+</table>
+<br>
+<h3>
+    Order Total Price : {{orderTotalPrice}}
+</h3>
